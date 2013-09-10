@@ -41,13 +41,12 @@ def sh():
 	payload = {'screen_name': 'syawalhafriz','count':10}
 	url = 'https://api.twitter.com/1.1/statuses/user_timeline.json'
 	r = requests.get(url, auth=oauth,params=payload)
-	#return str(r.json())
 	a=r.json()
 	b=[]
 	for i in range(payload['count']):
 		b.append(a[i]['text'])
 	return render_template('sh.html',name=b)
-	#return b
+
 	
 
 
